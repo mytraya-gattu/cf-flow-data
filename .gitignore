@@ -1,12 +1,1 @@
-# Large raw run data (training logs, MCMC chains, checkpoints) never in git
-mcmc_data/
-post_processed_data/
-checkpoints/
-*.jld2
-*.npz
-*.npy
-*.pkl
-*.ckpt
-*.h5
 .DS_Store
-build/

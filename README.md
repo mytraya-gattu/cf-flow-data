@@ -1,18 +1,17 @@
-# Data for "Dressing composite fermions with artificial intelligence"
+# cf-flow-data
 
-Mytraya Gattu, *PRX Intelligence* (2026). DOI: 10.1103/zq76-147c. Preprint: arXiv:2512.00527.
+Numerical data generated for the article *Dressing composite fermions with artificial intelligence* (Mytraya Gattu, PRX Intelligence, 2026, DOI: 10.1103/zq76-147c; preprint arXiv:2512.00527), presented in Figs. 3–7.
 
-This repository contains the post-processed data behind every data-based figure in the paper.
+The remaining figures of the article (Figs. 1, 2, and 8) are schematic illustrations.
 
-## Layout
+This repository contains the (post-processed) data needed to reproduce the figures from the paper. The data are organized by figure: each folder name starts with the figure number.
 
-- `data/` — post-processed results (CSV). One file per system size, filling factor, and state (uniform ground state or largest-L CF exciton), plus the fixed-phase DMC and DeepHall reference values used for comparison.
-- `mcmc_data/`, `post_processed_data/` — raw training and Monte Carlo outputs (not tracked in git; available from the author on request).
+## Data Format and Conventions
+- **CSV files with a header row** naming the columns; detailed column definitions are given in the README of each figure folder.
+- **Units**: energies are in units of `e^2 / (eps lB)`, where `lB` is the magnetic length; lengths are in units of `lB`; the Landau-level mixing strength `kappa` is dimensionless.
+- **Energies** per particle include the contribution of the uniform neutralizing background and the density-shift correction of the spherical geometry, as described in the paper.
+- **Errors**: for Monte Carlo results both the Monte Carlo standard error of the mean and the local-energy standard deviation are reported in separate columns.
+- **Smoothing**: the CF-Flow curves shown in the paper are Gaussian-process smoothings of the evaluations tabulated here (see the paper); the tables contain the unsmoothed evaluations.
 
-## Columns in `data/per_particle_energies_*.csv`
-
-`row_iter` (evaluation index), `kappa` (Landau-level mixing strength), `energy_per_particle` (E/N in units of e^2/(eps l_B), including the background-charge contribution and the density-shift correction), `mcmc_error_in_energy_per_particle` (Monte Carlo standard error), `local_energy_deviation_per_particle` (sigma(E)/N).
-
-## Citing
-
-Please cite the paper and this repository.
+## License
+CC BY 4.0, see `LICENSE`. Please cite the paper when using these data.
